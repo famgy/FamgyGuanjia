@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/start_jy"
+    android:id="@+id/rlSplash"
+    >
+
+    <TextView
+        android:id="@+id/tv_register_state"
+        android:alpha="1.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="222dp"
+        android:layout_marginTop="7dp"
+        android:text="启动中..."
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_register_state"
+        android:focusable="true"
+        android:maxHeight="4dp"
+        android:minHeight="4dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:progressDrawable="@drawable/po_seekbar"
+        android:thumb="@drawable/seekbar_thumb" />
+
+</RelativeLayout>
