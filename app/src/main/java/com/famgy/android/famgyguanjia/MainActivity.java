@@ -94,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
         bt_service_switch = (Button)findViewById(R.id.bt_service_switch);
         mAccessibilityManager = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
         if (false == checkEnabledAccessibilityService()) {
-            bt_service_switch.setText("开启服务");
+            bt_service_switch.setText("启动辅助服务");
         } else {
-            bt_service_switch.setText("关闭服务");
+            bt_service_switch.setText("关闭辅助服务");
         }
     }
 

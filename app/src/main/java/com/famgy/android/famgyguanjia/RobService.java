@@ -107,22 +107,6 @@ public class RobService extends AccessibilityService {
                 }
             }
 
-            /* 辅助功能开关 */
-            infos = nodeInfo.findAccessibilityNodeInfosByViewId("android:id/action_bar");
-            if (null != infos && !infos.isEmpty()) {
-                for (AccessibilityNodeInfo item : infos) {
-                    //Log.e(TAG, "android:id/action_bar, childCount : " + item.getChildCount());
-
-                    if (item.getChildCount() >= 2) {
-                        if ((null != item.getChild(1).getText()) && (item.getChild(1).getText().toString().equals("FamgyGuanjia"))) {
-                            Log.e(TAG, "辅助功能开关");
-
-                            performGlobalAction(GLOBAL_ACTION_BACK);
-                        }
-                    }
-                }
-            }
-
             nodeInfo.recycle();
         }
     }
