@@ -3,6 +3,7 @@ package com.famgy.android.famgyguanjia;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
@@ -80,9 +81,12 @@ public class MainActivity extends AppCompatActivity {
         bt_lock_screen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                if (true == devicePolicyManager.isAdminActive(componentName)) {
+                    devicePolicyManager.resetPassword("123456", 0);
+                    devicePolicyManager.lockNow();
+                } else {
+                    Toast.makeText(MainActivity.this, "没有设备管理/系统组件权限", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
